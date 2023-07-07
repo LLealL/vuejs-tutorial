@@ -1,14 +1,13 @@
 <template>
- <LoginComponent />
+ <ChatComponent />
 </template>
 
 <script>
-import LoginComponent from './components/LoginComponent.vue'
-
+import ChatComponent from './components/ChatComponent.vue'
 export default{
   name: 'app',
   components:{
-    LoginComponent
+    ChatComponent,
   }
 
 }

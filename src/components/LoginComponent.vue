@@ -24,7 +24,8 @@ export default {
   },
   methods: {
     
-   async login() {
+   async login(e) {
+    e.preventDefault();
      const response = await fetch('http://localhost:3000/auth/signin',{
         method: "POST",
         headers: {
