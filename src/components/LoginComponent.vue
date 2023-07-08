@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="!isLoggedIn">
         <h1>LOGIN</h1>
         <form @submit.prevent="login">
           <input v-model="email" placeholder="email" />
@@ -11,6 +11,9 @@
           <button type="submit">Login</button>
         </form>
       </div>
+      <div v-else>
+        <p>Você está Online e pode acessar o chat.</p>
+      </div>
 </template>
 
 <script>
@@ -20,6 +23,8 @@ export default {
     return {
       email: "",
       password: "",
+      isLoggedIn: false,
+
     };
   },
   methods: {
@@ -42,5 +47,10 @@ export default {
       console.log(localStorage.getItem('token'));
     },
   },
+  mounted() {
+
+    const token = localStorage.getItem('token');
+    this.isLoggedIn = token !== null;
+  }
 };
 </script>

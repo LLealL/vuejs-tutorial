@@ -1,30 +1,31 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import LoginComponent from "../components/LoginComponent.vue";
-import SignupComponent from "../components/LoginComponent.vue";
-import ChatComponent from "../components/ChatComponent.vue";
+import { createRouter, createWebHistory } from "vue-router";
 
-Vue.use(VueRouter);
+import ChatComponent from "../components/ChatComponent";
+import LoginComponent from "../components/LoginComponent";
+import SignupComponent from "../components/SignupComponent";
+
 const routes = [
-{
-    path: "/",
-    name: "Chat",
-    component: ChatComponent,
-},
-  {
-    path: "/signin",
-    name: "Signin",
-    component: LoginComponent,
-  },
-  {
-    path: "/Signup",
-    name: "Signup",
-    component: SignupComponent,
-  },
+
+    {
+        path: "/",
+        name: "Login",
+        component: LoginComponent,
+    },
+    {
+        path: "/chat",
+        name: "chat",
+        component: ChatComponent,
+    },
+    {
+        path: "/signup",
+        name: "Signup",
+        component: SignupComponent,
+    },
 ];
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
+
+const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
 });
+
 export default router;
