@@ -106,12 +106,15 @@ export default {
                 console.log(response.data);
                 this.suggestedNames = response.data.retorno.names;
                 console.log(this.suggestedNames);
-
+                this.messages.push({
+                    sender: 'chatbot',
+                    text: response.data.retorno.message,
+                })
             }).catch(error => {
                 console.error(error);
             });
             setTimeout(() => {
-                this.suggestedNames = ['Nome 4', 'Nome 5', 'Nome 6'];
+                //this.suggestedNames = ['Nome 4', 'Nome 5', 'Nome 6'];
                 this.isLoading = false;
             }, 2000);
         },
@@ -139,6 +142,7 @@ export default {
         },
         dislike: function() {
             this.isLoading = true;
+            this.suggestedNames = [];
             this.getNames();
             //gravar
             console.log(this.suggestedNames);

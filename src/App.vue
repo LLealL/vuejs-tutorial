@@ -1,32 +1,19 @@
 <template>
-  <div id="nav">
-    <br>
-    <router-link to="/"> 
-      Login 
-    </router-link> 
-    |
-    <router-link to="/signup"> 
-      Signup 
-    </router-link>
-    |
-    <router-link to="/chat"> 
-      Chat
-    </router-link>
-  </div>
-  <div class="container">
-    <router-view ></router-view>
+  <Navbar />
+  <div class="container mx-auto mt-8">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Navbar from './components/NavBar.vue';
+
+export default {
+  components: {
+    Navbar,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-#nav {
-  padding: 30px;
-}
 </style>
