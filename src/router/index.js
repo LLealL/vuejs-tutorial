@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import ChatComponent from "../components/ChatComponent";
+import ChatNovo from "../components/ChatNovo";
 import LoginComponent from "../components/LoginComponent";
 import SignupComponent from "../components/SignupComponent";
 
@@ -14,7 +14,7 @@ const routes = [
     {
         path: "/chat",
         name: "chat",
-        component: ChatComponent,
+        component: ChatNovo,
     },
     {
         path: "/signup",

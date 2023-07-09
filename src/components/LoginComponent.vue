@@ -43,7 +43,7 @@ export default {
       });
       const access_token = await response.json();
       console.log(access_token);
-      localStorage.setItem('token', JSON.stringify(access_token));
+      localStorage.setItem('token', 'Bearer ' + access_token.access_token);
       console.log(localStorage.getItem('token'));
     },
   },
